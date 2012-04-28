@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>TMZNS &larr; timezones for humans</title>
+	<meta name="description" content="TMZNS is a free, open-source timezone converter.">
+	
+	<link href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/timezone.css">
+	
+</head>
+<body id="index">
+	<div id="matrioska">
+		<div id="main-sentence">
+			<div id="loading">
+				<p>Loading, please wait. <br/> <progress></progress></p>
+			</div>
+			<h1><span id="tmzns">TMZNS</span> <span id="forhumans">&larr; timezones for humans</span></h1>
+			<p id="main-sentence-first-part">When it's <input type="text" name="origin_time" value="noon" id="origin_time" class="valid" disabled> in <input type="text" name="origin_zone" value="here" id="origin_zone" class="valid" disabled>, </p>
+			<p id="main-sentence-second-part">it's <input type="text" name="result_time" value="???" id="result_time" class="valid" disabled> in <input type="text" name="result_zone" value="Kuala Lumpur" id="result_zone" class="valid" disabled>.</p>
+		</div>
+		<p id="more-info-button"><a href="#" id="more-info-link">More info</a> <span id="more-info-arrow">&darr;</span></p>
+		<div id="more-info">
+			<div id="more-info-measuringWrapper">
+				<p><img src="pic/tmzns-icon-128.png" alt="TMZNS icon"><strong>TMZNS is a free, open-source timezone converter.</strong> <a class="install-chrome-app" href="https://chrome.google.com/webstore/detail/fgkienloijjhkoegoacpnfknffgnlkde">Install&nbsp;as&nbsp;Chrome&nbsp;App</a></p>
+
+				<p>Finding out the actual time difference between two places in the world is hard. There are online converters that can do that for you but their user experience sucks. I always wondered why someone won&#8217;t fix this &mdash; until I ultimately decided to try myself.</p>
+
+				<p>And boy, was I surprised how hard this problem is! If you think this is a simple algorithm, think again. Timezones and daylight saving times around the world are <em>a mess</em>. Fortunately, the great people at <a href="http://code.google.com/p/tzdata/" title="tzdata">tzdata</a> are publishing an open-source timezone database &mdash; so I was able to focus on user experience.</p>
+
+				<p>This is also an exercise of using Google&#8217;s <a href="http://closure-library.googlecode.com/" title="Closure Library">Closure Library &amp; Compiler</a>, which is why the code looks structured and everything &#8220;just works&#8221; (although, as always, <abbr title="your mileage may vary">YMMV</abbr>).</p>
+
+				<p>Shortcoming of this version:</p>
+
+				<ul>
+				<li>The time difference only applies for today. There will be a date picker in the future.</li>
+				<li>Only major cities are included. For example, you can find what is the time in Los Angeles, but not in Seattle.</li>
+				<li>Valid timezone inputs should include countries (&#8220;Czech Republic&#8221;) when these countries only have one timezone.</li>
+				<li>The app should understand inputs like &#8220;west usa&#8221;.</li>
+				<li>When you type a number (like &#8220;6&#8221;) into the time input field, the converter assumes you mean 6am. This should be explicitly shown.</li>
+				<li>The timezone field should show the actual timezone name (&#8220;GMT&#8221;, &#8220;PDT&#8221;) when the user inputs a city name.</li>
+				<li>The app should learn from user input and show times in the same format in which they are put in.</li>
+				<li>When user writes &#8220;now&#8221; as the time, it should autoupdate and correspond to <em>now</em>.</li>
+				<li>Optimizations of AJAX calls are still possible.</li>
+				<li>The code could be cleaner. There is at least one quick &amp; dirty hack (a method override).</li>
+				<li>Please <a href="http://code.google.com/p/tmzns/issues/entry">report</a> any other shortcomings and problems.</li>
+				</ul>
+
+				<p>Interested in the source code? It&#8217;s hosted <a href="http://code.google.com/p/tmzns" title="tmzns Source Code">here</a>.</p>
+
+				<p>Happy converting!</p>
+				
+				<p style="text-align:right">&mdash; Filip Hracek<p>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/closure-library/closure/goog/base.js"></script>
+	<script type="text/javascript">
+	
+		goog.require('goog.object');
+		goog.require('goog.string');
+		goog.require('goog.dom');
+		goog.require('goog.dom.classes');
+		goog.require('goog.events');
+		goog.require('goog.async.Delay');
+		goog.require('goog.ui.AutoComplete');
+		goog.require('goog.ui.AutoComplete.ArrayMatcher');
+		goog.require('goog.ui.AutoComplete.InputHandler');
+		goog.require('goog.ui.AutoComplete.Renderer');
+		goog.require('goog.net.XhrManager');
+		
+	</script>
+	<script type="text/javascript" charset="utf-8" src="js/tzdata.js"></script>
+	<script type="text/javascript">
+	
+		goog.require('filiph.tzdata');
+		
+	</script>
+	<script type="text/javascript" charset="utf-8" src="js/tztime.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/page-setup.js"></script>
+
+</body>
+</html>

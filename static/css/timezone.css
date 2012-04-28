@@ -1,0 +1,242 @@
+/* @override http://www.tmzns.com/css/timezone.css */
+
+/* @override http://0.0.0.0:8000/css/timezone.css */
+
+/*
+ * Copyright 2009 The Closure Library Authors. All Rights Reserved.
+ *
+ * Use of this source code is governed by the Apache License, Version 2.0.
+ * See the COPYING file for details.
+ */
+
+/*
+ * Styles for goog.ui.AutoComplete and its derivatives.
+ * Note: these styles need some work to get them working properly at various
+ * font sizes other than the default.
+ *
+ * @author pupius@google.com (Daniel Pupius)
+ * @author annams@google.com (Srinivas Annam)
+ */
+
+
+/*
+ * TODO(annams): Rename (here and in renderer.js) to specify class name as
+ * goog-autocomplete-renderer
+ */
+.ac-renderer {
+  font: normal 13pt 'Arvo', serif;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  -moz-box-shadow: 2px 2px 2px rgba(102, 102, 102, .4);
+  -webkit-box-shadow: 2px 2px 2px rgba(102, 102, 102, .4);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  width: 200pt;
+}
+
+.ac-row {
+  cursor: pointer;
+  padding: .4em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.ac-highlighted {
+  font-weight: bold;
+}
+
+.ac-active {
+  background-color: #d0f9d5;
+}
+
+
+
+/* 
+ * MY OWN
+ */
+
+
+body {
+	background-image: url(../pic/background.png);
+	background-repeat: no-repeat;
+	background-position: center 50pt;
+}
+
+body, p, input {
+	font-family: 'Arvo', serif;
+}
+
+div#loading {
+	position: absolute;
+	background: white;
+	width: 30%;
+	margin: 10pt 20%;
+	padding: 0pt 30pt;
+	text-align: center;
+	font-weight: bold;
+	
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 10px #ccc;
+	-moz-box-shadow: 0px 0px 10px #ccc;
+	box-shadow: 0px 0px 10px #ccc;
+}
+
+div#matrioska {
+	width: 80%;
+	margin: 110pt auto 0 auto;
+}
+
+/* @group Header */
+
+h1 {
+	font-size: 25pt;
+	font-weight: bold;
+	margin-bottom: 30pt;
+	border-top: 1pt dotted #e0e0e0;
+	padding-top: 10pt;
+}
+
+h1 span#tmzns {
+	background: black;
+	color: white;
+	padding: 0 10pt;
+	text-shadow: white 0 0 3px;
+	vertical-align: middle;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 3px black;
+	-moz-box-shadow: 0px 0px 3px black;
+	box-shadow: 0px 0px 3px black;
+
+}
+
+h1 span#forhumans {
+	color: #a0a0a0;
+	font-size: 15pt;
+	font-weight: bold;
+	padding-left: 10pt;
+	vertical-align: middle;
+}
+
+/* @end */
+
+
+
+/* @group Main Sentence */
+
+div#main-sentence, div#main-sentence input {
+	font-size: 20pt;
+}
+
+div#main-sentence input {
+	border: 3px solid #d0f9d5;
+	padding: 4pt 8pt;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px #95d1ab;
+	-moz-box-shadow: 0px 0px 5px #95d1ab;
+	box-shadow: 0px 0px 5px #95d1ab;
+	margin: 0 3px;
+	
+	-webkit-transition: border-color .1s linear;
+	-moz-transition: border-color .1s linear;
+	transition: border-color .1s linear;
+}
+
+div#main-sentence input:disabled {
+	color: #666;
+	background-color: #e0e0e0;
+	background-image: url(../pic/ajax-loader.gif);
+	background-repeat: no-repeat;
+	background-position: 90% 50%;
+}
+
+
+div#main-sentence input:enabled {
+	color: black;
+}
+
+input#origin_time, input#result_time {
+	width: 100pt;
+}
+
+input#origin_zone, input#result_zone {
+	width: 200pt;
+}
+
+p#main-sentence-second-part {
+	text-align: right;
+}
+
+input.valid {
+	background-color: #d0f9d5;
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#e3f8ea),color-stop(100%,#d0f9d5));
+	background: -moz-linear-gradient(top,  #e3f8ea, #d0f9d5);
+	-webkit-transition: background-color .1s linear;
+	-moz-transition: background-color .1s linear;
+	transition: background-color .1s linear;
+}
+
+input.invalid {
+	background-color: white;
+	-webkit-transition: background-color .1s linear;
+	-moz-transition: background-color .1s linear;
+	transition: background-color .1s linear;
+}
+
+/* @end */
+
+
+/* @group More info */
+
+p#more-info-button {
+	text-align: right;
+	padding-right: 10pt;
+	padding-top: 10pt;
+	font-size: 85%;
+	border-top: 1pt dotted #e0e0e0;
+}
+
+div#more-info {
+	font-size: 85%;
+	line-height: 1.5em;
+
+	height: 0;
+	-webkit-transition: height 1s ease-out;
+	-moz-transition: height 1s ease-out;
+	transition: height 1s ease-out;
+	overflow: hidden;
+}
+
+div#more-info div#more-info-measuringWrapper {
+	padding-bottom: 30pt;
+}
+
+div#more-info img {
+	float: right;
+	margin: 20pt 10pt 15pt 30pt;
+}
+
+a.install-chrome-app {
+	background: #3972CE;
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#4687DF),color-stop(100%,#2D5FBE));
+	border-top: 1px solid #4E8FE5;
+	border-right: 1px solid #4C8BE2;
+	border-bottom: 1px solid #5394E9;
+	border-left: 1px solid #4886DD;
+	padding: 2pt 3pt;
+	color: white;
+	font-weight: bold;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	text-decoration: none;
+}
+
+/* @end */
+

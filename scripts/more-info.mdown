@@ -1,0 +1,28 @@
+<img src="pic/tmzns-icon-128.png" alt="TMZNS icon">**TMZNS is a free, open-source timezone converter.** <a class="install-chrome-app" href="https://chrome.google.com/webstore/detail/fgkienloijjhkoegoacpnfknffgnlkde">Install&nbsp;as&nbsp;Chrome&nbsp;App</a>
+
+
+Finding out the actual time difference between two places in the world is hard. There are online converters that can do that for you but their user experience sucks. I always wondered why someone won't fix this &mdash; until I ultimately decided to try myself.
+
+And boy, was I surprised how hard this problem is! If you think this is a simple algorithm, think again. Timezones and daylight saving times around the world are *a mess*. Fortunately, the great people at [tzdata](http://code.google.com/p/tzdata/ "tzdata") are publishing an open-source timezone database &mdash; so I was able to focus on user experience.
+
+This is also an exercise of using Google's [Closure Library & Compiler](http://closure-library.googlecode.com/ "Closure Library"), which is why the code looks structured and everything "just works" (although, as always, <abbr title="your mileage may vary">YMMV</abbr>).
+
+Shortcoming of this version:
+
+* The time difference only applies for today. There will be a date picker in the future.
+* Only major cities are included. For example, you can find what is the time in Los Angeles, but not in San Francisco. (Of course, you probably know that these two cities share the same timezone, but still.)
+* Valid timezone inputs should include countries ("Czech Republic") when these countries only have one timezone.
+* The app should understand inputs like "west usa".
+* When you type a number (like "6") into the time input field, the converter assumes you mean 6am. This should be explicitly shown.
+* The timezone field should show the actual timezone name ("GMT", "PDT") when the user inputs a city name.
+* The app should learn from user input and show times in the same format in which they are put in.
+* When user writes "now" as the time, it should autoupdate and correspond to *now*.
+* Optimizations of AJAX calls are still possible.
+* The code could be cleaner. There is at least one quick & dirty hack (a method override).
+* Please [let me know](http://code.google.com/p/tmzns/issues/entry) of any other shortcomings and problems.
+
+Interested in the source code? It's hosted [here](http://code.google.com/p/tmzns "tmzns Source Code").
+
+Happy converting!
+
+<p style="text-align:right">&mdash; Filip Hracek<p>
