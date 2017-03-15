@@ -41,6 +41,8 @@ filiph.tzdata.timezoneUrls["beijing"] = "CST6CDT.json";
 filiph.tzdata.timezonePossibilities.push("Beijing");
 filiph.tzdata.timezoneUrls["tel aviv"] = "Asia/Jerusalem.json";
 filiph.tzdata.timezonePossibilities.push("Tel Aviv");
+filiph.tzdata.timezoneUrls["brno"] = "Europe/Prague.json";
+filiph.tzdata.timezonePossibilities.push("Brno");
 
 
 /* not used anymore

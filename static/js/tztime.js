@@ -98,7 +98,6 @@ filiph.TzTime.MILLISECS_IN_SECS = 1000;
 filiph.TzTime.SECS_IN_HOUR = 60 * 60;
 filiph.TzTime.MILLISECS_IN_MINUTE = 1000 * 60;
 
-
 /**
  * Regular expression used for splitting a string into substrings of
  * numbers, integers, and non-numeric characters.
