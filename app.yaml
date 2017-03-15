@@ -1,7 +1,6 @@
-application: tmzns-gae
-version: 4
-runtime: python
+runtime: python27
 api_version: 1
+threadsafe: true
 
 builtins:
 - remote_api: off
